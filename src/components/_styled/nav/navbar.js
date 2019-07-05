@@ -5,12 +5,20 @@ import {
   openLeft,
   socialFadeInRight,
   navFadeInLeft,
+  activeLinkOverlay,
+  hrRight,
 } from '../../_styled/shared/keyframes';
+
+import { colors } from '../shared/shared';
+
+const { brandColor, twitterBlue, githubBlack, twitchPurple } = colors;
 
 export const Navbar = styled.nav`
   display: grid;
   grid-template-columns: 1fr 50px max-content 50px 1fr;
-  grid-template-areas: 'social hr-left brand hr-right nav';
+  /* grid-template-columns: 1fr max-content 1fr; */
+  grid-template-areas: 'social vr-left brand vr-right nav';
+  /* grid-template-areas: 'social brand nav'; */
   justify-items: center;
   align-items: center;
   height: 15vh;
@@ -22,32 +30,34 @@ export const Brand = styled(Link)`
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
-  color: #674585;
+  color: ${brandColor};
 
   &:active {
-    color: #674585;
+    color: ${brandColor};
   }
 
   &:visited {
-    color: #674585;
+    color: ${brandColor};
   }
 
   &::before {
     content: '';
-    margin: 0 0 5px 20%;
+    margin: 0 0 5px 5%;
+    width: 90%;
     display: block;
-    width: 60%;
+    max-width: 0;
     height: 1px;
     background: #000000;
     padding: -5px 0;
-    animation: 1s linear forwards ${openRight};
+    animation: 0.6s linear forwards ${openRight};
   }
 
   &::after {
     content: '';
-    margin: 5px 0 0 90%;
+    margin: 5px 0 0 17.5%;
     display: block;
-    width: 90%;
+    max-width: 0;
+    width: 65%;
     height: 1px;
     background: #000000;
     animation: 0.6s linear forwards ${openLeft};
@@ -69,20 +79,40 @@ export const Nav = styled.ul`
 
 export const NavItem = styled.li`
   cursor: pointer;
+  position: relative;
+  margin: 0 1rem;
+  text-align: center;
+  min-width: 3rem;
+  transition: all 0.5s;
 `;
 
-// TODO: This is going to need to be a gatsby <Link>
+export const ActiveLinkOverlay = styled.div`
+  display: block;
+  position: absolute;
+  max-width: 0;
+  width: 100%;
+  height: 100%;
+  background: ${brandColor};
+  z-index: -1;
+  opacity: 0.8;
+`;
+
 export const NavLink = styled(Link)`
   display: block;
   height: 100%;
   text-decoration: none;
   color: #000000;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  margin: 0 1rem;
 
   &:visited {
     color: #000000;
+  }
+
+  &:hover {
+    ${ActiveLinkOverlay}:hover {
+      animation: 0.3s linear forwards ${activeLinkOverlay};
+    }
   }
 `;
 
@@ -96,28 +126,55 @@ export const SocialNav = styled(Nav)`
   animation: 0.3s linear 1s forwards ${socialFadeInRight};
 `;
 
-// TODO: This is going to need to be a gatsby <Link>
 export const SocialLink = styled(NavLink)`
   font-size: 1.5rem;
   margin: 0 0 0 2rem;
 
   .hover {
     &-twitter {
-      padding: 3px;
+      width: 30px;
+      padding: 5px;
+      font-size: 1.8rem;
+      color: ${twitterBlue};
+      transition: all 0.3s;
+      border-radius: 30%;
 
       &:hover {
-        color: #1da1f2;
-        border: 1px #1da1f2 solid;
+        box-shadow: 0px 0 px 10px ${twitterBlue};
+        background: ${twitterBlue};
         border-radius: 50%;
+        color: #ffffff;
       }
     }
 
     &-github {
+      color: ${githubBlack};
+      background: #ffffff;
+      transition: all 0.3s;
+      border-radius: 30%;
+
       &:hover {
         color: #ffffff;
-        background: #000000;
-        border: 1px #000000 solid;
+        background: ${githubBlack};
+        border: thin solid ${githubBlack};
+        box-shadow: 0px 0 px 10px ${githubBlack};
         border-radius: 50%;
+      }
+    }
+
+    &-twitch {
+      width: 30px;
+      padding: 5px;
+      font-size: 1.8rem;
+      color: ${twitchPurple};
+      transition: all 0.3s;
+      border-radius: 30%;
+
+      &:hover {
+        box-shadow: 0px 0 px 10px ${twitchPurple};
+        background: ${twitchPurple};
+        border-radius: 50%;
+        color: #ffffff;
       }
     }
   }

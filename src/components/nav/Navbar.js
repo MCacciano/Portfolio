@@ -9,8 +9,10 @@ import {
   NavLink,
   SocialNav,
   SocialLink,
+  ActiveLinkOverlay,
 } from '../_styled/nav/navbar';
-import { HR } from '../_styled/shared/shared';
+import { VR, HR } from '../_styled/shared/shared';
+import { hrRight, hrLeft } from '../_styled/shared/keyframes';
 
 export default () => {
   return (
@@ -18,7 +20,7 @@ export default () => {
       <SocialNav>
         <NavItem>
           <SocialLink>
-            <FA className="hover-github" icon={['fab', 'github']} />
+            <FA className="hover-twitch" icon={['fab', 'twitch']} />
           </SocialLink>
         </NavItem>
         <NavItem>
@@ -26,25 +28,28 @@ export default () => {
             <FA className="hover-twitter" icon={['fab', 'twitter']} />
           </SocialLink>
         </NavItem>
-        {/* <NavItem>
+        <NavItem>
           <SocialLink>
-            <SocialIcon>
-              <FA icon={['fab', 'github']} />
-            </SocialIcon>
+            <FA className="hover-github" icon={['fab', 'github']} />
           </SocialLink>
-        </NavItem> */}
+        </NavItem>
       </SocialNav>
-      <HR gridArea="hr-left" />
-      <Brand to="/">Mozzey Magick</Brand>
-      <HR gridArea="hr-right" />
+      <HR hr={hrLeft} gridArea="vr-left" width="120%" margin="0 120% 0 0" />
+      <VR gridArea="vr-left" />
+      <Brand to="/">Michael Cacciano</Brand>
+      <VR gridArea="vr-right" />
+      <HR hr={hrRight} gridArea="vr-right" width="120%" margin="0 0 0 120%" />
       <Nav>
         <NavItem>
+          <ActiveLinkOverlay />
           <NavLink>About</NavLink>
         </NavItem>
         <NavItem>
+          <ActiveLinkOverlay />
           <NavLink>Work</NavLink>
         </NavItem>
         <NavItem>
+          <ActiveLinkOverlay />
           <NavLink>Contact</NavLink>
         </NavItem>
       </Nav>

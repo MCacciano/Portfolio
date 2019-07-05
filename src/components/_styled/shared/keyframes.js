@@ -1,24 +1,34 @@
 import { keyframes } from 'styled-components';
 
+export const activeLinkOverlay = keyframes`
+  from {
+    max-width: 0;
+  }
+  
+  to {
+    max-width: 90%;
+  }
+`;
+
 export const openRight = keyframes`
   from {
     max-width: 0;
   }
 
   to {
-    max-width: 100%;
+    max-width: 90%;
   }
 `;
 
 export const openLeft = keyframes`
   from {
-    margin: 5px 0 0 90%;
+    margin: 5px 0 0 82.5%;
     max-width: 0;
   }
 
   to {
-    margin: 5px 0 0 5%;
-    max-width: 90%;
+    margin: 5px 0 0 17.5%;
+    max-width: 65%;
   }
 `;
 
@@ -63,5 +73,29 @@ export const navFadeInLeft = keyframes`
   to {
     opacity: 1;
     margin-left: 4rem;
+  }
+`;
+
+export const hrRight = keyframes`
+  from {
+    margin: 0 0 0 0;
+    max-width: 0;
+  }
+
+  to {
+    margin: 0 0 0 120%;
+    max-width: 120%;
+  }
+`;
+
+export const hrLeft = keyframes`
+  from {
+    margin: 0 0 0 0;
+    max-width: 0;
+  }
+
+  to {
+    margin: 0 120% 0 0;
+    max-width: 120%;
   }
 `;
