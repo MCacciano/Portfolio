@@ -7,7 +7,7 @@ import {
   navFadeInLeft,
   activeLinkOverlay,
   hrRight,
-} from '../../_styled/shared/keyframes';
+} from '../shared/keyframes';
 
 import { colors } from '../shared/shared';
 

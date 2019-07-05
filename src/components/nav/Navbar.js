@@ -10,7 +10,7 @@ import {
   SocialNav,
   SocialLink,
   ActiveLinkOverlay,
-} from '../_styled/nav/navbar';
+} from '../_styled/nav/StyledNavbar';
 import { VR, HR } from '../_styled/shared/shared';
 import { hrRight, hrLeft } from '../_styled/shared/keyframes';
 
