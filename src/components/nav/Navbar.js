@@ -10,9 +10,9 @@ import {
   SocialNav,
   SocialLink,
   ActiveLinkOverlay,
-} from '../_styled/nav/StyledNavbar';
-import { VR, HR } from '../_styled/shared/shared';
-import { hrRight, hrLeft } from '../_styled/shared/keyframes';
+} from '../styled/nav/StyledNavbar';
+import { VR, HR } from '../styled/shared/shared';
+import { hrRight, hrLeft } from '../styled/shared/keyframes';
 
 export default () => {
   return (
