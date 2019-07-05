@@ -145,19 +145,22 @@ export const SocialLink = styled(NavLink)`
     }
 
     &-github {
-      color: ${githubBlack};
-      background: #ffffff;
-      transition: all 0.3s;
-      border-radius: 30%;
-      font-size: 1.8rem;
+      width: 30px;
       padding: 5px;
+      font-size: 1.8rem;
+      color: ${githubBlack};
+      /* transition: all 0.3s; */
+      /* border-radius: 30%; */
+      background: #ffffff;
 
       &:hover {
-        color: #ffffff;
-        background: ${githubBlack};
-        border: thin solid ${githubBlack};
         box-shadow: 0px 0 px 10px ${githubBlack};
+        background: ${githubBlack};
         border-radius: 50%;
+        color: #ffffff;
+        padding: 0;
+        margin: 4px;
+        border: 1px solid ${githubBlack};
       }
     }
 
