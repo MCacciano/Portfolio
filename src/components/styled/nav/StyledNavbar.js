@@ -16,9 +16,7 @@ const { brandColor, twitterBlue, githubBlack, twitchPurple } = colors;
 export const Navbar = styled.nav`
   display: grid;
   grid-template-columns: 1fr 50px max-content 50px 1fr;
-  /* grid-template-columns: 1fr max-content 1fr; */
   grid-template-areas: 'social vr-left brand vr-right nav';
-  /* grid-template-areas: 'social brand nav'; */
   justify-items: center;
   align-items: center;
   height: 15vh;
@@ -102,7 +100,6 @@ export const NavLink = styled(Link)`
   height: 100%;
   text-decoration: none;
   color: #000000;
-  font-size: 13px;
   font-weight: 600;
 
   &:visited {
@@ -152,6 +149,8 @@ export const SocialLink = styled(NavLink)`
       background: #ffffff;
       transition: all 0.3s;
       border-radius: 30%;
+      font-size: 1.8rem;
+      padding: 5px;
 
       &:hover {
         color: #ffffff;
