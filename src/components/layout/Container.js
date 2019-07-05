@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledContainer } from '../_styled/layout/container';
+import { StyledContainer } from '../_styled/layout/StyledContainer';
 import Navbar from '../nav/Navbar';
 
 export default ({ children }) => (
