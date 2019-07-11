@@ -1,5 +1,8 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
+
+import { WithActiveNavbarLink } from './navbar.component';
 
 // $githubBlack #242a2e;
 
@@ -12,17 +15,17 @@ const navLinkStyles = css`
   color: #242a2e;
 
   &:hover {
-    color: ${props => (props.isBrand ? '#242a2e' : '#ffffff')};
+    color: ${props => (props.brand ? '#242a2e' : '#ffffff')};
   }
 `;
 
 /************** style functions **************/
 const getLinkStyles = props => {
-  if (props.isBrand) {
-    return brandLinkStyles;
-  } else {
-    return navLinkStyles;
-  }
+  // if (props.state.brand) {
+  //   return brandLinkStyles;
+  // } else {
+  return navLinkStyles;
+  // }
 };
 
 /************** styled **************/
@@ -72,13 +75,15 @@ export const NavbarLinkOverlay = styled.div`
   background: #242a2e;
   top: 0;
   z-index: -1;
-  max-width: 0;
-  opacity: 0;
+  max-width: ${({ isActive }) => (isActive ? 100 : 0)};
   transition: all 0.3s;
   transform: skewX(-30deg);
 
   ${NavbarLink}:hover & {
     max-width: 100%;
-    opacity: 1;
   }
+`;
+
+export const ActiveNavbarLinkOverlay = styled(NavbarLinkOverlay)`
+  max-width: 100%;
 `;
