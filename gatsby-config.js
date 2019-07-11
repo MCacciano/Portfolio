@@ -1,5 +1,6 @@
 module.exports = {
-  plugins: [
-    `gatsby-plugin-styled-components`,
-  ],
+  siteMetadata: {
+    title: 'Michael Cacciano',
+  },
+  plugins: [`gatsby-plugin-styled-components`],
 };
